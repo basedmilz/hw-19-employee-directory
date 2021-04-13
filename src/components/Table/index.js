@@ -1,10 +1,12 @@
 import React from "react";
 import API from "../../utils/api";
+import SearchForm from "./SearchForm"
 
 class Table extends React.Component {
     state = {
         employees: [],
-        filteremployees: []
+        filteremployees: [],
+        sort: ""
     }
 
 searchEmployee = name => {
@@ -21,10 +23,13 @@ searchEmployee = name => {
         )
 
     }
+
+    
+    
     render() {
         return (
             <div className="App">
-                <input onClick ={this.searchEmployee}/>
+                <input className="search"/>
             
                 <table className="table table-dark">
                     <thead>
